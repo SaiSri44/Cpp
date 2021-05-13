@@ -4,7 +4,7 @@
 // we will loook at the  double linked list in this file 
 #include<iostream>
 #include<string>
-#include<algorithm>
+// #include<algorithm>
 #include<list>
 using namespace std;
 
@@ -29,6 +29,7 @@ int main()
     // insert(), erase(),remove()
     // clear()
     // push_back(), push_front(), pop_back(), pop_front() 
+    // sort(), reverse(),merge(),unique(),remove_if()
 
     // let us see the declaration and acessing of elements and functions associated with the list 
 
@@ -114,6 +115,59 @@ int main()
     // pop_front() will remove the first element of the list /
     sai.pop_front();
     cout<< "the first element of the list after removing 1000 is  : " <<*sai.begin() <<endl; 
-          return 0;
- 
+   
+  //  ------------sort() function------------
+
+      //  sort function is built in function of the list class 
+          list<int> angajala = {21,99,1, 43,2, 3,65, 4, 5,78, 6, 7, 5};
+          angajala.sort();
+          cout<< "the elements of the angajala list after sorting are : " <<endl;
+          for(auto x : angajala)
+            cout<<x<<endl;
+
+  //  -------------reverse() function-----------
+
+  // reverse function reverese the list in place 
+  cout<< "the elements of the angajala list after reversing is : " <<endl;
+  angajala.reverse();
+  for(auto x : angajala)
+    cout<<x<<endl;
+
+    // ------------------merge function-------------
+
+    // merge function is used to merge the two sorted lists .if the lists are not sorted then merge will concatenate both the lists
+  list<int> yamuna = {2, 3, 15, 6, 9};
+  list<int> anuradha = {99, 23, 435, 132};
+  // here the lists yamuna and anuradha are not sorted so merge will simply add the one list at the end of the another list 
+
+  cout<< "the yamuna list after merging with the anuradha list is : " <<endl;
+  yamuna.merge(anuradha);
+  for(auto x : yamuna)
+    cout<<x<<endl;
+  
+
+  // let us merge the sorted lists
+  list<int> sita = {4, 5, 3, 1, 3, 6, 7};
+  list<int> rama = {545, 231, 12, 1, 42};
+  // let us sort the both the lists
+  sita.sort();
+  rama.sort();
+  sita.merge(rama);
+  cout<< "sorted sita list after merging with the sorted rama is : " <<endl;
+  for(auto x : sita)
+    cout<<x<<endl; 
+
+
+//  -------------unique function------------
+// unique function removes the duplicates which are at the same place or side by side
+
+  list<int> kittu = {5, 6, 7, 2, 2, 8, 1, 1};
+  // notice that the in the list kittu 2's and 1's are side by side unique will remove those duplicates onlly
+  kittu.unique();
+  cout<< "the elements of the kittu after using unique function on it : " <<endl;
+  for(auto x : kittu)
+    cout<<x<<endl;
+
+  
+  return 0;
 }
