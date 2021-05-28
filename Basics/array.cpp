@@ -62,7 +62,7 @@ int main()
     // this is very useful when we do not know the size of the array 
    
     float yamuna[8] = {1,2,3,4,5};
-    for(float y : yamuna)
+    for(float y : yamuna) 
        cout<<y << endl;
     // note here data type is float 
 
@@ -78,7 +78,7 @@ int main()
 
     for (auto  x : saisri)
       cout << x << endl;
-    //   here saisri is of int type     
+    //   here saisri is of int type
     return 0;
 
 }  
